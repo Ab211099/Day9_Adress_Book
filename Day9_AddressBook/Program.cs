@@ -9,10 +9,8 @@ namespace Day9_AddressBook
         {
             AddressBook newaddressbook = new AddressBook();
             Contact newcontact = new Contact();
-            bool flag = true;
-            while (flag)
-            {
-                Console.WriteLine("Enter Number to Execute the Address book Program \n1. Create contacts \n2. Add contact \n3. Edit contact \n4. Exit");
+           
+            Console.WriteLine("Enter Number to Execute the Address book Program \n1. Create contacts \n2. Add contact \n3. Edit contact \n4.Delete contact \n5. Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -45,7 +43,11 @@ namespace Day9_AddressBook
                         newaddressbook.Display();
                         break;
                     case 4:
-                        flag = false;
+                        newaddressbook.Deletecontact();
+                        newaddressbook.Display();
+                        break;
+                    case 5:
+                        Console.WriteLine("Exit"); 
                         break;
                     default:
                         Console.WriteLine("Invalid Choice");
@@ -57,4 +59,3 @@ namespace Day9_AddressBook
     }
     
    
-}
